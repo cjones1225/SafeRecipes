@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="SearchContainer">
+        <form id="js-form">
+            <label for="search-term">Type any Ingredient</label>
+            <input type="text" name="search-term" id="js-search-term" required>
+            <input type="submit" value="Go!">
+        </form>
+        <p id="js-error-message" class="error-message"></p>
+        <section id="results" class="hidden">
+            <h2>Results</h2>
+            <ul id="results-list">
+
+            </ul>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
