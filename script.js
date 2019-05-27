@@ -23,6 +23,7 @@ function displayResults(responseJson) {
 
 function displayRecipe(responseJson) {
     $('#results-list').empty();
+    $('#js-error-message').empty();
     console.log(responseJson);
     $('#results-list').append(
         `<h2>${responseJson.title}</h2>
@@ -108,10 +109,6 @@ function watchForm() {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val();
         getRecipes(searchTerm);
-    });
-    // $('button').click(event => {
-    //     event.preventDefault();
-    //     loadRecipe();
-    // });
+    })
 };
 $(watchForm);
