@@ -13,8 +13,10 @@ body {
     background-color: #feefff;
 }
 
-ul#recipeCard {
-    
+input[type=submit]{
+    border-radius: 5px;
+    width: 20%;
+    height: auto;
 }
 
 main.SearchContainer {
