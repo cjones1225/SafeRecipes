@@ -1,22 +1,66 @@
 * {
+    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    display: block;
+    text-align: center;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Laila', sans-serif;
+    background-color: #feefff;
 }
 
-button, input[type="text"]  {
+ul#recipeCard {
+    
+}
+
+main.SearchContainer {
+    display: inline;
+    max-width: 600px;
     padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
-button:hover {
+p {
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.js-form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 50px;
+}
+
+img {
+    max-width: 25%;
+    max-height: 25%;
+}
+
+.results-list{
+    display: inline;
+}
+
+li {
+    max-width: 30%;
+    max-height: 50%;
+    text-align: center;
+}
+
+h3 {
     cursor: pointer;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
+ul.recipeCard {
+    text-align: center;
 }
 
 .error-message {

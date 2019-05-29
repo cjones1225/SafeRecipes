@@ -9,19 +9,29 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="SearchContainer">
-        <form id="js-form">
-            <label for="search-term">Type any Ingredient</label>
-            <input type="text" name="search-term" id="js-search-term" required>
-            <input type="submit" value="Go!">
+    <header>
+        <h1>Allergy Tolerant Recipes</h1>
+        <p>Enter Ingredients you'd like to use<br></br>Exclude ingredients you should avoid or don't want included in the recipe.<br></br></p>
+    </header>
+    <main class="SearchContainer" role="main">
+        <form id="js-form" role="form">
+            <label for="search-term">Search a Keyword</label>
+            <input type="text" name="search-term" id="js-search-term" placeholder="Spaghetti" required>
+            <label for="intolerance">Exclude Ingredient</label>
+            <input name="intolerance" type="text" id="js-search-intolerance" placeholder="Gluten">
+            <input type="submit" value="Search">
         </form>
         <p id="js-error-message" class="error-message"></p>
-        <section id="results" class="hidden">
-            <h2>Results</h2>
-            <ul id="results-list">
+    </main>
+    <div id="searchResults" class="hidden">
+        <ul id="results-list">
 
-            </ul>
-        </section>
+        </ul>
+    </div>
+    <div id="recipe" class="hidden">
+        <ul id="recipeCard">
+
+        </ul>
     </div>
     <script src="script.js"></script>
 </body>

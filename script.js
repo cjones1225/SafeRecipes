@@ -13,39 +13,42 @@ function displayResults(responseJson) {
     console.log(responseJson);
     for (let i=0; i < responseJson.results.length; i++){
         $('#results-list').append(
-            `<li><button onclick="getRecipeId(${responseJson.results[i].id})" id="${responseJson.results[i].id}">${responseJson.results[i].title}</button>
+            `<li><h3 cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})">${responseJson.results[i].title}</h3>
             <img src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
             </li>`
         )
     };
-    $('#results').removeClass('hidden');
+    $('#searchResults').removeClass('hidden');
 };
 
 function displayRecipe(responseJson) {
     $('#results-list').empty();
     $('#js-error-message').empty();
+    $('#recipe').removeClass('hidden');
     console.log(responseJson);
-    $('#results-list').append(
-        `<h2>${responseJson.title}</h2>
-        <h3>Ingredients:</h3>`
-    );
+    $('#recipeCard').append(`<h2>${responseJson.title}</h2><h3>Ingredients:</h3>`);
     for (let i=0; i < responseJson.extendedIngredients.length; i++){
-        $('#results-list').append(
+        $('#recipeCard').append(
         `<li>${responseJson.extendedIngredients[i].original}</li>`
         )
     };
-    $('#results-list').append(`<h3>Instructions:</h3>`)
+    $('#recipeCard').append(`<h3>Instructions:</h3>`)
     for (let i=0; i < responseJson.analyzedInstructions[0].steps.length; i++){
-        $('#results-list').append(
+        $('#recipeCard').append(
             `<li>${i+1}. ${responseJson.analyzedInstructions[0].steps[i].step}</li>`
         )
     };
     
 };
 
-function getRecipes(query){
+function getRecipes(search, exclude){
+    $('#js-error-message').empty();
+    $('#recipeCard').empty();
     const params = {
-        query: query
+        query: search,
+        excludeIngredients: exclude,
+        offset: 0,
+        number: 100
     };
     const queryString = formatQueryParams(params)
     const url = searchURL + 'search'+'?' + queryString;
@@ -72,7 +75,7 @@ function getRecipes(query){
         });
 };
 
-function loadRecipe(recipeId) {
+function loadSelectedRecipe(recipeId) {
     const params = {
         id: recipeId
     };
@@ -101,14 +104,15 @@ function loadRecipe(recipeId) {
 
 function getRecipeId(recipeId) {
     console.log(recipeId);
-    loadRecipe(recipeId);
+    loadSelectedRecipe(recipeId);
 };
 
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val();
-        getRecipes(searchTerm);
+        const exclude = $('#js-search-intolerance').val();
+        getRecipes(searchTerm, exclude);
     })
 };
 $(watchForm);
