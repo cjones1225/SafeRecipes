@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
-    <meta http-equiv="X-UA-Compatible" content="ie-edge">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>SafeRecipes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <h1>Allergy Tolerant Recipes</h1>
-        <p>Enter Ingredients you'd like to use<br></br>Exclude ingredients you should avoid or don't want included in the recipe.<br></br></p>
+        <h1>Safe Recipes</h1>
+        <p>Enter Ingredients you'd like to use<br><br>Exclude ingredients you should avoid or don't want included in the recipe.<br></p>
     </header>
-    <main class="SearchContainer" role="main">
+    <main class="searchContainer" role="main">
         <form id="js-form" role="form">
-            <label for="search-term">Search a Keyword</label>
-            <input type="text" name="search-term" id="js-search-term" placeholder="Spaghetti" required>
-            <br></br>
-            <label for="intolerance">Exclude Ingredient</label>
-            <input name="intolerance" type="text" id="js-search-intolerance" placeholder="Gluten">
-            <br></br>
+            <label for="js-search-term">Search a Keyword or words</label>
+            <input type="text" id="js-search-term" placeholder="Spaghetti" required>
+            <br><br>
+            <label for="js-search-intolerance">Exclude Ingredient(s)</label>
+            <input type="text" id="js-search-intolerance" placeholder="Gluten">
+            <br><br>
             <input type="submit" value="Search">
         </form>
         <p id="js-error-message" class="error-message"></p>

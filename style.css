@@ -19,7 +19,7 @@ input[type=submit]{
     height: auto;
 }
 
-main.SearchContainer {
+main.searchContainer {
     display: inline;
     max-width: 600px;
     padding: 5px;

@@ -48,7 +48,8 @@ function getRecipes(search, exclude){
         query: search,
         excludeIngredients: exclude,
         offset: 0,
-        number: 100
+        number: 100,
+        instructionsRequire: true
     };
     const queryString = formatQueryParams(params)
     const url = searchURL + 'search'+'?' + queryString;
