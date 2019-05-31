@@ -11,14 +11,18 @@ function formatQueryParams(params) {
 function displayResults(responseJson) {
     $('#results-list').empty();
     console.log(responseJson);
-    for (let i=0; i < responseJson.results.length; i++){
-        $('#results-list').append(
-            `<li><h3 cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})">${responseJson.results[i].title}</h3>
-            <img src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
-            </li>`
-        )
+    if(responseJson.results.length === 0) {
+        alert('No recipes found, please try again');
+    } else {
+        for (let i=0; i < responseJson.results.length; i++){
+            $('#results-list').append(
+                `<li><h3 cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})">${responseJson.results[i].title}</h3>
+                <img src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
+                </li>`
+            )
+        };
     };
-    $('#searchResults').removeClass('hidden');
+$('#searchResults').removeClass('hidden');
 };
 
 function displayRecipe(responseJson) {
@@ -29,7 +33,7 @@ function displayRecipe(responseJson) {
     $('#recipeCard').append(`<h2>${responseJson.title}</h2><h3>Ingredients:</h3>`);
     for (let i=0; i < responseJson.extendedIngredients.length; i++){
         $('#recipeCard').append(
-        `<li>${responseJson.extendedIngredients[i].original}</li>`
+        `<li id="${responseJson.extendedIngredients[i].id}">${responseJson.extendedIngredients[i].original}</li>`
         )
     };
     $('#recipeCard').append(`<h3>Instructions:</h3>`)
@@ -41,12 +45,13 @@ function displayRecipe(responseJson) {
     
 };
 
-function getRecipes(search, exclude){
+function getRecipes(search, exclude, allergy){
     $('#js-error-message').empty();
     $('#recipeCard').empty();
     const params = {
         query: search,
         excludeIngredients: exclude,
+        intolerances: allergy,
         offset: 0,
         number: 100,
         instructionsRequire: true
@@ -113,7 +118,8 @@ function watchForm() {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val();
         const exclude = $('#js-search-intolerance').val();
-        getRecipes(searchTerm, exclude);
+        const allergy = $('#js-search-allergy').val();
+        getRecipes(searchTerm, exclude, allergy);
     })
 };
 $(watchForm);
