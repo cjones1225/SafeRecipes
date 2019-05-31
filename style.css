@@ -52,17 +52,27 @@ img {
 }
 
 li {
-    max-width: 30%;
+    max-width: 50%;
     max-height: 50%;
     text-align: center;
+    margin: auto;
+    padding: 15px;
 }
 
 h3 {
     cursor: pointer;
 }
 
-ul.recipeCard {
+ul#recipeCard > li {
     text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+ul#results-list > li {
+    text-align: center;
+    width: 50%;
+    margin: auto;
 }
 
 .error-message {

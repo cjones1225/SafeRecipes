@@ -13,8 +13,8 @@
         <h1>Safe Recipes</h1>
         <p>Enter Ingredients you'd like to use<br><br>Exclude ingredients you should avoid or don't want included in the recipe.<br></p>
     </header>
-    <main class="searchContainer" role="main">
-        <form id="js-form" role="form">
+    <main class="searchContainer">
+        <form id="js-form">
             <label for="js-search-term">Search a Keyword or words</label>
             <input type="text" id="js-search-term" placeholder="Spaghetti" required>
             <br><br>
@@ -26,12 +26,12 @@
         <p id="js-error-message" class="error-message"></p>
     </main>
     <div id="searchResults" class="hidden">
-        <ul id="results-list">
+        <ul id="results-list" style="list-style: none">
 
         </ul>
     </div>
     <div id="recipe" class="hidden">
-        <ul id="recipeCard">
+        <ul id="recipeCard" style="list-style: none">
 
         </ul>
     </div>
