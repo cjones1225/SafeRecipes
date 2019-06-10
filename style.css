@@ -47,16 +47,16 @@ img {
     max-height: 25%;
 }
 
-.results-list{
+.results-list li{
     display: inline;
+    text-align: center;
+    margin: auto;
+    float: left;
 }
 
 li {
-    max-width: 50%;
+    max-width: 33%;
     max-height: 50%;
-    text-align: center;
-    margin: auto;
-    padding: 15px;
 }
 
 h3 {
@@ -64,12 +64,6 @@ h3 {
 }
 
 ul#recipeCard > li {
-    text-align: center;
-    width: 50%;
-    margin: auto;
-}
-
-ul#results-list > li {
     text-align: center;
     width: 50%;
     margin: auto;
