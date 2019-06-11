@@ -14,9 +14,13 @@ body {
 }
 
 input[type=submit]{
-    border-radius: 5px;
+    border-radius: 10px;
     width: 20%;
     height: auto;
+}
+
+input[type=text] {
+    padding: 2px;
 }
 
 main.searchContainer {
@@ -51,12 +55,8 @@ img {
     display: inline;
     text-align: center;
     margin: auto;
-    float: left;
-}
-
-li {
     max-width: 33%;
-    max-height: 50%;
+    float: left;
 }
 
 h3 {
