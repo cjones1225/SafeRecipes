@@ -30,7 +30,7 @@ function displayRecipe(responseJson) {
     $('#js-error-message').empty();
     $('#recipe').removeClass('hidden');
     console.log(responseJson);
-    $('#recipeCard').append(`<h2>${responseJson.title}</h2><h3>Ingredients:</h3>`);
+    $('#recipeCard').append(`<img src="${responseJson.image}"/><h2>${responseJson.title}</h2><h3>Ingredients:</h3>`);
     for (let i=0; i < responseJson.extendedIngredients.length; i++){
         $('#recipeCard').append(
         `<li id="${responseJson.extendedIngredients[i].id}">${responseJson.extendedIngredients[i].original}</li>`
