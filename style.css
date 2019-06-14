@@ -106,6 +106,7 @@ ul#recipeCard > li {
 .selectBox select {
     width: 35%;
     font-weight: bold;
+    max-width: 150px;
 }
 
 .overSelect {
