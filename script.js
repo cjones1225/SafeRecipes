@@ -12,7 +12,9 @@ function displayResults(responseJson) {
     $('#results-list').empty();
     console.log(responseJson);
     if(responseJson.results.length === 0) {
-        alert('No recipes found, please try again');
+        $('#results-list').append(
+            `<h3>We're Sorry, but no recipes could be found matching your requests. Try excluding some Intolerances and then adjusting the Ingredients to suit your needs!</h3>`
+        )
     } else {
         for (let i=0; i < responseJson.results.length; i++){
             $('#results-list').append(
@@ -30,7 +32,7 @@ function displayRecipe(responseJson) {
     $('#js-error-message').empty();
     $('#recipe').removeClass('hidden');
     console.log(responseJson);
-    $('#recipeCard').append(`<img src="${responseJson.image}"/><h2>${responseJson.title}</h2><h3>Ingredients:</h3>`);
+    $('#recipeCard').append(`<img src="${responseJson.image}"/><h2>${responseJson.title}</h2><h3>Ingredients:</h3><h4>Excluding: ${getCheckedIntolerances()}</h4>`);
     for (let i=0; i < responseJson.extendedIngredients.length; i++){
         $('#recipeCard').append(
         `<li id="${responseJson.extendedIngredients[i].id}">${responseJson.extendedIngredients[i].original}</li>`
@@ -77,7 +79,7 @@ function getRecipes(search, exclude, allergy){
         })
         .then(responseJson => displayResults(responseJson))
         .catch(err => {
-            $('#js-error-message').text(`Something went wrong: ${err.message}`);
+            $('#js-error-message').text(`We're Sorry, Something went wrong: ${err.message}`);
         });
 };
 
@@ -139,6 +141,7 @@ function watchForm() {
         const searchTerm = $('#js-search-term').val();
         const exclude = $('#js-search-intolerance').val();
         const allergy = getCheckedIntolerances();
+        console.log(allergy);
         getRecipes(searchTerm, exclude, allergy);
     })
 };

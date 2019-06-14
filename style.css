@@ -50,7 +50,6 @@ p {
 img {
     max-width: 50%;
     width: auto;
-    /*max-height: 25%;*/
 }
 
 .results-list {
@@ -99,12 +98,17 @@ ul#recipeCard > li {
     align-self: center;
 }
 
+.selectBox {
+    position: relative;
+}
+
 .selectBox select {
     width: 35%;
     font-weight: bold;
 }
 
 .overSelect {
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
@@ -114,6 +118,8 @@ ul#recipeCard > li {
 #checkboxes {
     display: none;
     border: 1px #dadada solid;
+    max-width: 35%;
+    margin: auto;
 }
   
 #checkboxes label {
@@ -132,29 +138,5 @@ ul#recipeCard > li {
         margin-top: 5px;
     } .results-list > li{
         max-width: 33%;
-    }
-}
-
-@media only screen and (min-width: 600px){
-    body {
-        background-color: lightblue;
-    }
-}
-
-@media only screen and (min-width: 768px){
-    body {
-        background-color: gray;
-    }
-}
-
-@media only screen and (min-width: 992px){
-    body {
-        background-color: mintcream;
-    }
-}
-
-@media only screen and (min-width: 1200px){
-    body {
-        background-color: blanchedalmond;
     }
 }
