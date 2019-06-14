@@ -22,8 +22,23 @@
             <input type="text" id="js-search-intolerance" placeholder="Gluten">
             <br><br>
             <label for="js-search-allergy">Food Allergy</label>
-            <input type="text" id="js-search-allergy" placeholder="Shellfish">
-            <br><br>
+            <div class="selectBox" onclick="showCheckboxes()">
+                <select>
+                    <option>If you wish to include an Intolerance, add them here</option>
+                </select>
+                <div class="overSelect"></div>
+            </div>
+            <input class="hidden" id="js-search-intolerance">
+            <div id="checkboxes" style="display: none;">
+                <label>
+                    <input type="checkbox" id="dairy">
+                    "Dairy"
+                </label>
+                <label>
+                    <input type="checkbox" id="egg">
+                    "Egg"
+                </label>
+            </div>
             <input type="submit" value="Search">
         </form>
         <p id="js-error-message" class="error-message"></p>

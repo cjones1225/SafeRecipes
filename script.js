@@ -112,13 +112,33 @@ function getRecipeId(recipeId) {
     console.log(recipeId);
     loadSelectedRecipe(recipeId);
 };
+var expanded = false;
+function showCheckboxes() {
+    let checkboxes = document.getElementById("checkboxes");
+    if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+    }
+}
+
+function getCheckedIntolerances() {
+    let checked = new Array ();
+
+    $('input[type=checkbox]:checked').each(function (){
+        checked.push(this.id);
+    });
+    return checked;
+};
 
 function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val();
         const exclude = $('#js-search-intolerance').val();
-        const allergy = $('#js-search-allergy').val();
+        const allergy = getCheckedIntolerances();
         getRecipes(searchTerm, exclude, allergy);
     })
 };

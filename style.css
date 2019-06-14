@@ -10,7 +10,6 @@ html {
 
 body {
     font-family: 'Laila', sans-serif;
-    background-color: #feefff;
 }
 
 input[type=submit]{
@@ -27,12 +26,7 @@ input[type=text] {
 
 main.searchContainer {
     display: inline;
-    max-width: 600px;
     padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    flex-wrap: wrap;
 }
 
 #recipe-card > img {
@@ -69,10 +63,18 @@ img {
 
 .results-list > li {
     max-width: 25%;
+    cursor: pointer;
+}
+
+.results-list > li > img {
+    max-height: 200px;
 }
 
 h3 {
     cursor: pointer;
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 ul#recipeCard > li {
@@ -95,6 +97,31 @@ ul#recipeCard > li {
     margin-left: auto;
     margin-right: auto;
     align-self: center;
+}
+
+.selectBox select {
+    width: 35%;
+    font-weight: bold;
+}
+
+.overSelect {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes {
+    display: none;
+    border: 1px #dadada solid;
+}
+  
+#checkboxes label {
+    display: block;
+}
+  
+#checkboxes label:hover {
+    background-color: #1e90ff;
 }
 
 @media only screen and (max-width: 600px){
