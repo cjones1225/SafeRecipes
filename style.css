@@ -137,7 +137,9 @@ ul#recipeCard > li {
     } .results-list {
         font-size: 10px;
         margin-top: 5px;
+        flex-direction: column;
+        flex-wrap: nowrap;
     } .results-list > li{
-        max-width: 33%;
+        max-width: 100%;
     }
 }
