@@ -106,7 +106,7 @@ function loadSelectedRecipe(recipeId) {
         })
         .then(responseJson => displayRecipe(responseJson))
         .catch(err => {
-            $('#js-error-message').text(`Something went wrong: ${err.message}`);
+            $('#js-error-message').text(`We're sorry, something went wrong: Cannot find instructions for this recipe.`);
         });
 };
 

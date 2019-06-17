@@ -8,8 +8,20 @@ html {
     text-align: center;
 }
 
+header {
+    background-color: white;
+    margin: auto;
+    max-width: 550ox;
+}
+form#js-form {
+    background-color: white;
+    margin: auto;
+    max-width: 500px;
+}
+
 body {
     font-family: 'Laila', sans-serif;
+    background-image: url(cutting-board-background.jpg);
 }
 
 input[type=submit]{
