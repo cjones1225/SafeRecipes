@@ -138,7 +138,7 @@ function watchForm() {
     $('form').submit(event => {
         event.preventDefault();
         const searchTerm = $('#js-search-term').val();
-        const exclude = $('#js-search-intolerance').val();
+        const exclude = $('#js-search-exclude').val();
         const allergy = getCheckedIntolerances();
         getRecipes(searchTerm, exclude, allergy);
     })
