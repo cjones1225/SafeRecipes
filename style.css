@@ -43,6 +43,13 @@ main.searchContainer {
     padding: 5px;
 }
 
+section {
+    padding: 10px;
+    border: 1px black solid;
+    background-color: white;
+    opacity: .7;
+}
+
 #recipe-card > img {
     height: auto;
     width: 90%;
