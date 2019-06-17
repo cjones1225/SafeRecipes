@@ -99,7 +99,6 @@ h3 {
 }
 
 ul#recipeCard > li {
-    text-align: left;
     width: 75%;
     margin: auto;
     padding: 5px;
@@ -107,6 +106,8 @@ ul#recipeCard > li {
 
 .error-message {
     color: red;
+    background-color: white;
+    max-width: 500px;
 }
 
 .hidden {
