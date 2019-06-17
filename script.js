@@ -24,7 +24,7 @@ function displayResults(responseJson) {
             $('#results-list').append(
                 `<li cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})"><section><h2>${responseJson.results[i].title}</h2>
                 <img alt="Picture of ${responseJson.results[i].title}" src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
-                </section></li>`
+                <br><button onclick="loadSelectedRecipe()">Get Recipe!</button></section></li>`
             )
         };
     };

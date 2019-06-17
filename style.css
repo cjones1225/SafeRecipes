@@ -97,7 +97,9 @@ h3 {
     margin-left: 10%;
     margin-right: 10%;
 }
-
+li > button {
+    margin: auto;
+}
 ul#recipeCard > li {
     width: 75%;
     margin: auto;
