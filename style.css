@@ -48,12 +48,7 @@ section {
     border: 1px black solid;
     margin: 5px;
     background-color: white;
-    opacity: .7;
     min-height: 400px;
-}
-
-section > h3, img {
-    opacity: 1;
 }
 
 #recipe-card > img {
