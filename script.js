@@ -10,7 +10,6 @@ function formatQueryParams(params) {
 
 function displayResults(responseJson) {
     $('#results-list').empty();
-    console.log(responseJson);
     if(responseJson.results.length === 0) {
         $('#results-list').append(
             `<h3>We're Sorry, but no recipes could be found matching your requests. Try excluding some Intolerances and then adjusting the Ingredients to suit your needs!</h3>`
@@ -31,7 +30,6 @@ function displayRecipe(responseJson) {
     $('#results-list').empty();
     $('#js-error-message').empty();
     $('#recipe').removeClass('hidden');
-    console.log(responseJson);
     $('#recipeCard').append(`<img src="${responseJson.image}"/><h2>${responseJson.title}</h2><h3>Ingredients:</h3><h4>Excluding: ${getCheckedIntolerances()}</h4>`);
     for (let i=0; i < responseJson.extendedIngredients.length; i++){
         $('#recipeCard').append(
@@ -111,10 +109,11 @@ function loadSelectedRecipe(recipeId) {
 };
 
 function getRecipeId(recipeId) {
-    console.log(recipeId);
     loadSelectedRecipe(recipeId);
 };
+
 var expanded = false;
+
 function showCheckboxes() {
     let checkboxes = document.getElementById("checkboxes");
     if (!expanded) {
@@ -141,7 +140,6 @@ function watchForm() {
         const searchTerm = $('#js-search-term').val();
         const exclude = $('#js-search-intolerance').val();
         const allergy = getCheckedIntolerances();
-        console.log(allergy);
         getRecipes(searchTerm, exclude, allergy);
     })
 };
