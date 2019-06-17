@@ -18,7 +18,7 @@ function displayResults(responseJson) {
         for (let i=0; i < responseJson.results.length; i++){
             $('#results-list').append(
                 `<li cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})"><h3>${responseJson.results[i].title}</h3>
-                <img src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
+                <img alt="Picture of ${responseJson.results[i].title}" src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
                 </li>`
             )
         };
