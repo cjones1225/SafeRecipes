@@ -17,7 +17,7 @@ function displayResults(responseJson) {
     } else {
         for (let i=0; i < responseJson.results.length; i++){
             $('#results-list').append(
-                `<li cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})"><section><h1>${responseJson.results[i].title}</h1>
+                `<li cursor="pointer" onclick="getRecipeId(${responseJson.results[i].id})"><section><h2>${responseJson.results[i].title}</h2>
                 <img alt="Picture of ${responseJson.results[i].title}" src='https://spoonacular.com/recipeImages/${responseJson.results[i].imageUrls[0]}'>
                 </section></li>`
             )
@@ -30,7 +30,7 @@ function displayRecipe(responseJson) {
     $('#results-list').empty();
     $('#js-error-message').empty();
     $('#recipe').removeClass('hidden');
-    $('#recipeCard').append(`<img src="${responseJson.image}"/><h2>${responseJson.title}</h2><h3>Ingredients:</h3><h4>Excluding: ${getCheckedIntolerances()}</h4>`);
+    $('#recipeCard').append(`<li><img alt="Picture of ${responseJson.title}" src="${responseJson.image}"/><h2>${responseJson.title}</h2><h3>Ingredients:</h3><h4>Excluding: ${getCheckedIntolerances()}</h4></li>`);
     for (let i=0; i < responseJson.extendedIngredients.length; i++){
         $('#recipeCard').append(
         `<li id="${responseJson.extendedIngredients[i].id}">${responseJson.extendedIngredients[i].original}</li>`
