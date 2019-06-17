@@ -46,8 +46,13 @@ main.searchContainer {
 section {
     padding: 10px;
     border: 1px black solid;
+    margin: 5px;
     background-color: white;
     opacity: .7;
+}
+
+h3, img {
+    opacity: 1;
 }
 
 #recipe-card > img {
